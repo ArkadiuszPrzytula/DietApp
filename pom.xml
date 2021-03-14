@@ -75,6 +75,13 @@
             <version>0.5.1</version>
         </dependency>
 
+        <!--To process configuration properties-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
 
 
 
