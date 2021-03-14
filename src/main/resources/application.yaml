@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+#    when you want to chane behavior h2 database to keep data in file-based storage please commend line above and uncommend line below
+#    url: jdbc:h2:file:/data/demo
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            clientId: 1620274088172623
+            clientSecret: fa1b6db06ae9dd2f6ec2b4d57962635a
+#            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
+        provider:
+          facebook:
+            authorizationUri: https://www.facebook.com/v3.0/oauth/dialog/oauth
+            tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
+            userInfoUri: https://graph.facebook.vom/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
+
+
+
+app:
+  auth:
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExperiationMsec: 864000000
+    oauth2:
+      - http://localhost:300/oauth/redirect
