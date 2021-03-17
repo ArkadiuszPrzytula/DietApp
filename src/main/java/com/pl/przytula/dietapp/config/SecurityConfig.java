@@ -1,6 +1,8 @@
 package com.pl.przytula.dietapp.config;
 
+import com.pl.przytula.dietapp.security.CustomOAuth2UserService;
 import com.pl.przytula.dietapp.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
+import com.pl.przytula.dietapp.security.oauth2.OAuth2AuthenticationSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
